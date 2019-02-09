@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 08, 2019 at 09:45 PM
+-- Generation Time: Feb 09, 2019 at 05:48 PM
 -- Server version: 5.6.17
 -- PHP Version: 5.5.12
 
@@ -28,10 +28,24 @@ SET time_zone = "+00:00";
 
 CREATE TABLE IF NOT EXISTS `user` (
   `uid` int(11) NOT NULL AUTO_INCREMENT,
-  `password` varchar(80) NOT NULL,
-  `email` varchar(80) NOT NULL,
+  `username` varchar(50) NOT NULL,
+  `password` varchar(50) NOT NULL,
   PRIMARY KEY (`uid`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
+
+--
+-- Dumping data for table `user`
+--
+
+INSERT INTO `user` (`uid`, `username`, `password`) VALUES
+(1, 'hiba@yahoo.com', ''),
+(2, 'h@gmail.com', ''),
+(3, '', 'mmm'),
+(4, '', 'mmm'),
+(5, '', 'mmm'),
+(6, '', '1111'),
+(7, 'ha', '1111'),
+(8, 'hibaali', '1212');
 
 -- --------------------------------------------------------
 
@@ -45,7 +59,7 @@ CREATE TABLE IF NOT EXISTS `userinfo` (
   `password` varchar(50) NOT NULL,
   `email` varchar(50) NOT NULL,
   `topscore` time NOT NULL,
-  KEY `uid` (`uid`)
+  KEY `userinfo_ibfk_1` (`uid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
