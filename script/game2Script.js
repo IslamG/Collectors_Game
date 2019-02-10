@@ -53,7 +53,7 @@ function buildItems() {
 			+rotateItem()+"deg)", "z-index":"7"});
 		img.css("left", xPos + "px");
     	// Get random animation interval
-		speed = random(5000, 7000);
+		speed = random(5000, 10000);
 		img.addClass("item");
 		// Start animation
 		
@@ -109,8 +109,7 @@ function timer(sec, min){
          ":" + (seconds > 9 ? seconds : "0" + seconds);
             if((seconds==0)&&(minutes==0)){
                 clearInterval(watch);
-                alert("hi");
-				wonDialogue();
+				won();
 				$('.item').stop(true,false);
 			}
     }, 1000);  
