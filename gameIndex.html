@@ -16,7 +16,18 @@
 <p>Loading...</p>
 </div>
 <div id="startScreen" class="start">
-    <button id="startButton" class="start" onclick="play()">START</button>
+    <h2> How to play:</h2>
+        You will find a hoard of items in this room and it's <i>your</i> job to sort them!<br/>
+        Use your mouse to click on items displayed on the screen to select an item found.<br/>
+        If your item is on the list you're one step closer to <span style="color:yellow;">victory</span>. 
+        But be careful! You don't just click randomly.<br/><h4 style="text-align: center; color:pink" >Be warned!</h4>Don't catch any 
+        Clicking 3 times on items not listed will earn you a <span style="color:red;">penalty</span> and will add <span
+        style="color:pink; font-weight:bolder;">3 seconds</span>to your time.<br/>
+        You may use the <span style="color:yellow;">hint</span> buttons to solve 1 item each.<br/><br/>
+        <p style="text-align: center;">
+        <button id="startButton" class="start" onclick="play()">START</button>
+        <br/> <b><u>HAVE FUN</u></b>
+        </p>
 </div>
 <span id="hintBox">
     <img src="images/hint.png" class="hint">
@@ -25,7 +36,7 @@
 </span>
 <div class="popup" id="winDialogue">
     <p>You Won!<br/>Your time is:<br/><span id="totTime"></span><br/>Thank you for playing!!</p>
-    <button id="log">Login</button> or <button id="reg">Register</button>
+    
    <span class="close">
     <i class="fa fa-close"></i>
   </span>
