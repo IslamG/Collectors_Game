@@ -1,12 +1,13 @@
 <?php
     session_start();
-    $_SESSION['loggedIn']="no";
-    $_SESSION['userID']="2";
+    //$_SESSION['loggedIn']="yes";
+    //$_SESSION['userID']="2";
 ?>
 
 <!DOCTYPE html>
 <html>
 <head>
+<title>Hidden Object Game</title>
 <link rel="stylesheet" type="text/css" href="style/gameStyle.css">
 <link rel="stylesheet" type="text/css" href="style/popUpStyle.css">
 <link rel="stylesheet" href="fonts/font-awesome/css/font-awesome.min.css">
@@ -42,7 +43,7 @@
 </span>
 <div class="popup" id="winDialogue">
     <p>You Won!<br/>Your time is:<br/><span id="totTime"></span><br/>Thank you for playing!!</p>
-
+    <p id="changeable"></p>
    <span class="close">
     <i class="fa fa-close"></i>
   </span>
