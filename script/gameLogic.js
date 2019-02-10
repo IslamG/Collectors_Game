@@ -89,6 +89,26 @@ function won(){
     $('#winDialogue').css('pointer-events', 'auto');
     $('#pauseBtn').css('pointer-events', 'none');
     $('#restartBtn').css('pointer-events', 'auto');
+    document.cookie = 'time='+showTime;
+    $(document).ready(function() {               
+
+      $.ajax({    //create an ajax request to display.php
+        //type: "POST",
+        url: "addTime.php",
+        dataType: html,
+        success: function(data){
+            alert(data);
+            $("#winDialogue").append(data);
+            
+        },
+        error: function(e) 
+        {
+            alert('Error: ' + e);
+        }
+
+        });
+    });
+
 }
 var onOff=true;
 function pause(){
