@@ -1,3 +1,9 @@
+<?php
+    session_start();
+    $_SESSION['loggedIn']="no";
+    $_SESSION['userID']="2";
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -36,11 +42,11 @@
 </span>
 <div class="popup" id="winDialogue">
     <p>You Won!<br/>Your time is:<br/><span id="totTime"></span><br/>Thank you for playing!!</p>
-    
+
    <span class="close">
     <i class="fa fa-close"></i>
   </span>
-    <br/>To have a chance to add your time to our <u>Top 50</u> list.
+   
 </div>
 <img id="item_pane" class="gameControls" src="images/decoration/item_pane.png"/>
 <img id="timer" class="gameControls" src="images/decoration/timer.png"/>

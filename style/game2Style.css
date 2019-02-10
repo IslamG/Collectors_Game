@@ -32,9 +32,9 @@
   filter: drop-shadow(2px 2px 2px rgba(173,255,47,0.3))drop-shadow(-2px 2px 2px rgba(173,255,47,0.3))
          drop-shadow(2px -2px 2px rgba(173,255,47,0.3))drop-shadow(-2px -2px 2px rgba(173,255,47,0.3));
 }
-.fade.active {
+.fade.running {
   display: block;
-  animation: fade 2s ease-out forwards;
+  animation: fade 2s linear forwards;
 }
 @keyframes fade {
   0%{
@@ -77,7 +77,6 @@
   padding:0;
   margin:0;
   position: absolute;
-  border: solid 1px black;
 }
 #basket{
     border: solid 1px black;
@@ -85,7 +84,7 @@
     margin:0;
 }
 #stuff{
-  top:2%;bottom:-400px;right:0%;left:0%;
+  top:2%;bottom:0%;right:0%;left:0%;
   padding:0; margin:0; 
 }
 #scoreVal{
@@ -102,4 +101,10 @@
 	
 	color: white;
 	z-index:10;
+}
+#score{
+  font-size: 70px;
+  color: rgba(225,255,0,0.8);
+  padding: 5px;
+  font-weight: bolder;
 }
