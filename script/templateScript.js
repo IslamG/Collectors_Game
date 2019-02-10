@@ -7,7 +7,7 @@ $("nav.tnav").append("<ul class='tul'></ul>");
 $("ul.tul").append("<li class='tlist'></li>");
 $("li.tlist").append("<a id='a1' href='#' >home</a>");
 $("li.tlist").append("<a id='a2' href='#' >about</a>");
-$("li.tlist").append("<a  id='a3' href='#' >play now</a>");
+$("li.tlist").append("<a  id='a3' href='gameIndex.php' >play now</a>");
 $("li.tlist").append("<a id='log' href='#'>login</a>");
 $("li.tlist").append("<a  id='a5' href='#' >register</a>");
   });
