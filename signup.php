@@ -10,7 +10,7 @@
   <h1>Sign Up</h1>
   </div>
 	
-  <form method="post" action="register.php">
+  <form method="post" action="signup.php">
   	<?php include('errors.php'); ?>
   	<div class="container">
    
