@@ -62,6 +62,7 @@ function restartButton(){
     document.getElementById("winDialogue").style.display="none";
     $('body').css('pointer-events', 'auto');
     $('.hint').css({"filter":"none","pointer-events": "auto"});
+    $('#changeable').html("");
     clearInterval(watch);
     timer(0,0);
     init();
@@ -92,20 +93,16 @@ function won(){
     document.cookie = 'time='+showTime;
     $(document).ready(function() {               
 
-      $.ajax({    //create an ajax request to display.php
-        //type: "POST",
+      $.ajax({    //create an ajax request to addTime.php
         url: "addTime.php",
-        dataType: html,
+        dataType: 'html',
         success: function(data){
-            alert(data);
-            $("#winDialogue").append(data);
-            
+            $("#changeable").append(data);  
         },
         error: function(e) 
         {
             alert('Error: ' + e);
         }
-
         });
     });
 
@@ -155,6 +152,7 @@ function penalty(){
         timer(str[3]+str[4],str[0]+str[1]);
     }
 }
+$(document).ready(function(){
 $(".hint").click(function(e){
     var name, liText;
     index=random(0,$('.item').length);
@@ -175,4 +173,5 @@ $(".hint").click(function(e){
     //trigger found function and disable 1 hint
     $( ".item:nth-child("+index+")" ).trigger("click");
     $(e.target).css({"filter":"invert(30%)","pointer-events": "none"});
+});
 });

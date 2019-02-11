@@ -1,3 +1,16 @@
+<?php 
+  session_start(); 
+
+  if (!isset($_SESSION['username'])) {
+  	$_SESSION['msg'] = "You must log in first";
+  	header('location: login.php');
+  }
+  if (isset($_GET['logout'])) {
+  	session_destroy();
+  	unset($_SESSION['username']);
+  	header("location: login.php");
+  }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,6 +24,19 @@
 <link rel="stylesheet" type="text/css"  href="style/templateStyle.css">
 </head>
 <body>
+    <div class="content">
+        <!-- notification message -->
+        <?php if (isset($_SESSION['success'])) : ?>
+          <div class="error success" >
+            <h3>
+              <?php 
+                echo $_SESSION['success']; 
+                unset($_SESSION['success']);
+              ?>
+            </h3>
+          </div>
+        <?php endif ?>
+    
 <!-- Navigation-->
 <!-- Header -->
 <div id="headpos">
@@ -139,6 +165,14 @@
     <center><p>Copyright &copy; 2019 collectors game . designed by : SH3I </p></center>
   </div>
 </div>
+
+ <!-- logged in user information -->
+ <?php  if (isset($_SESSION['username'])) : ?>
+ <p>Welcome <strong><?php echo $_SESSION['username']; ?></strong></p>
+ <p> <a href="index.php?logout='1'" style="color: red;">logout</a> </p>
+<?php endif ?>
+</div>
+
 <script src="script/jquery-3.3.1.min.js"></script>
 <!-- Javascripts --> 
 <script src="script/homeScript.js" type="text/javascript" ></script>
