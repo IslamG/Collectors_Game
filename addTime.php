@@ -4,10 +4,10 @@ include "dbconfig.php";
 //if not logged in show button
  session_start();
     $_SESSION['loggedIn']="yes"; //initiate with values
-    $_SESSION['userID']="2"; //unti login page is complete
+    $_SESSION['userID']="1"; //unti login page is complete
 
-if ($_SESSION['loggedIn']=="no"){
-        echo '<button id="logBtn" onclick="">Login</button> or <button id="regBtn" onclick="">Register</button>
+if ($_SESSION['loggedIn']!="yes"){
+        echo '<button id="logBtn" onClick="login.php">Login</button> or <button id="regBtn" onClick="signup.php">Register</button>
                 <br/>To have a chance to add your time to our <u>Top 50</u> list.';
     }
 else{
@@ -45,8 +45,8 @@ else{
             $stmt= $conn->prepare($query);
             if ($stmt->execute())
             {
-                return $resultTime;
-                //echo "\nsuccess";
+                //return $resultTime;
+                echo "\nsuccess";
             }
         }
         catch (Exception $ex)

@@ -1,7 +1,8 @@
 <?php 
   session_start(); 
-
-  if (!isset($_SESSION['username'])) {
+  $_SESSION['loggedIn']="no";
+  $_SESSION['userId']="";
+  /*if (!isset($_SESSION['username'])) {
   	$_SESSION['msg'] = "You must log in first";
   	header('location: login.php');
   }
@@ -9,7 +10,7 @@
   	session_destroy();
   	unset($_SESSION['username']);
   	header("location: login.php");
-  }
+  }*/
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -45,7 +46,7 @@
     <h1>Welcome to collectors game</h1>
     <p id="headerpar"> hope you enjoy our game </p>
     <div class="clearfix"></div>
-    <a href="gameIndex.html" class="btn btn-default btn-lg page-scroll">play now </a> 
+    <a href="gameIndex.php" class="btn btn-default btn-lg page-scroll">play now </a> 
     <a href="game2Index.html" class="btn btn-default btn-lg page-scroll">more games like this </a>
   </div>
 </header>
@@ -54,7 +55,7 @@
 <!-- about the game Section -->
 <div id="game-section">
   <div class="container"> <!-- Container -->
-    <div class="section-title">
+    <div class="section-title" id="aboutDiv">
       <h2> about the <strong> game </strong></h2>
 	  <hr>
     <div id="gameDesc">

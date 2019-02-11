@@ -90,6 +90,7 @@ function won(){
     $('#winDialogue').css('pointer-events', 'auto');
     $('#pauseBtn').css('pointer-events', 'none');
     $('#restartBtn').css('pointer-events', 'auto');
+    $('.tnav').css('pointer-events', 'auto');
     document.cookie = 'time='+showTime;
     $(document).ready(function() {               
 

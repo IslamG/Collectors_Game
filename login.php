@@ -4,7 +4,7 @@
 <head>
   <title>Registration system PHP and MySQL</title>
 	<link rel="stylesheet" type="text/css" href="style/loginStyle.css">
-	<script src="js/jquery-3.3.1.js" type="text/javascript" ></script>
+	<script src="script/jquery-3.3.1.js" type="text/javascript" ></script>
 </head>
 <body>
   <div class="header">
