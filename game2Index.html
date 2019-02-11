@@ -1,6 +1,7 @@
 <!doctype html>
 <html>
 <head>
+    <title>Falling Object Game</title>
     <link rel="stylesheet" type="text/css" href="style/gameStyle.css">
     <link rel="stylesheet" type="text/css" href="style/popUpStyle.css">
     <link rel="stylesheet" type="text/css" href="style/game2Style.css">
@@ -16,7 +17,18 @@
         <p>Loading...</p>
     </div>
     <div id="startScreen" class="start">
+        <h2> How to play:</h2>
+        Items will fall gradually and it's <i>your</i> job to catch them!
+        Move your mouse to the <b>right</b> or <b>left</b> to move the basket under the falling items.<br/>
+        When the item collides it will be caught and you will gain <span class="green" style="color:yellow;"> 10 points</span>. 
+        But be careful! If you miss an item and it drops to the bottom you will lose <span class="red" style="color:pink;">
+        10 points</span>.<br/><h4 class="red" style="text-align: center; color:pink" >Be warned!</h4>Don't catch any 
+        items in the <span style="color:red;">Avoid</span> section, because these items will subtract <span
+        class="red" style="color:pink; font-weight:bolder;">30 points</span><br/><br/>
+        <p style="text-align: center;">
         <button id="startButton" class="start" onclick="play()">START</button>
+        <br/> <b><u>HAVE FUN</u></b>
+        </p>
     </div>
     <section>
         <h1 class="red" style="left:15%;top:2%;position:absolute;color:red;z-index:11;margin-top:0;">Avoid</h1>

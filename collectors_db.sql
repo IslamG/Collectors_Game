@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 26, 2019 at 01:20 AM
+-- Generation Time: Feb 09, 2019 at 05:48 PM
 -- Server version: 5.6.17
 -- PHP Version: 5.5.12
 
@@ -23,41 +23,29 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `top50`
---
-
-CREATE TABLE IF NOT EXISTS `top50` (
-  `uid` int(11) NOT NULL,
-  `score` time NOT NULL,
-  KEY `constraint_2` (`uid`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `top50`
---
-
-INSERT INTO `top50` (`uid`, `score`) VALUES
-(1, '01:00:00');
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `user`
 --
 
 CREATE TABLE IF NOT EXISTS `user` (
-  `uid` int(11) NOT NULL,
-  `email` varchar(45) NOT NULL,
-  `password` varchar(25) NOT NULL,
-  KEY `constraint_1` (`uid`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `uid` int(11) NOT NULL AUTO_INCREMENT,
+  `username` varchar(50) NOT NULL,
+  `password` varchar(50) NOT NULL,
+  PRIMARY KEY (`uid`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
 
 --
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`uid`, `email`, `password`) VALUES
-(1, 'hiba@yahoo.com', '123456');
+INSERT INTO `user` (`uid`, `username`, `password`) VALUES
+(1, 'hiba@yahoo.com', ''),
+(2, 'h@gmail.com', ''),
+(3, '', 'mmm'),
+(4, '', 'mmm'),
+(5, '', 'mmm'),
+(6, '', '1111'),
+(7, 'ha', '1111'),
+(8, 'hibaali', '1212');
 
 -- --------------------------------------------------------
 
@@ -67,39 +55,22 @@ INSERT INTO `user` (`uid`, `email`, `password`) VALUES
 
 CREATE TABLE IF NOT EXISTS `userinfo` (
   `uid` int(11) NOT NULL,
-  `fname` varchar(80) NOT NULL,
-  `uname` varchar(50) NOT NULL,
-  `gender` varchar(50) NOT NULL,
-  `country` varchar(50) NOT NULL,
-  `lastlogin` date NOT NULL,
-  `img` char(80) NOT NULL,
+  `username` varchar(50) NOT NULL,
+  `password` varchar(50) NOT NULL,
+  `email` varchar(50) NOT NULL,
   `topscore` time NOT NULL,
-  PRIMARY KEY (`uid`)
+  KEY `userinfo_ibfk_1` (`uid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `userinfo`
---
-
-INSERT INTO `userinfo` (`uid`, `fname`, `uname`, `gender`, `country`, `lastlogin`, `img`, `topscore`) VALUES
-(1, 'hiba', 'ali', 'gggg', 'tripoli', '0000-00-00', 'gfhgh', '01:00:00'),
-(2, 'ali', 'hiba', 'fggghh', 'tripoli', '0000-00-00', 'gggg', '01:05:00');
 
 --
 -- Constraints for dumped tables
 --
 
 --
--- Constraints for table `top50`
+-- Constraints for table `userinfo`
 --
-ALTER TABLE `top50`
-  ADD CONSTRAINT `constraint_2` FOREIGN KEY (`uid`) REFERENCES `user` (`uid`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
--- Constraints for table `user`
---
-ALTER TABLE `user`
-  ADD CONSTRAINT `constraint_1` FOREIGN KEY (`uid`) REFERENCES `userinfo` (`uid`) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE `userinfo`
+  ADD CONSTRAINT `userinfo_ibfk_1` FOREIGN KEY (`uid`) REFERENCES `user` (`uid`);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
