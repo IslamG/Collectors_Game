@@ -74,7 +74,7 @@ button:hover {
         $email=$_POST["email"];
 
              global $con;
-             $query = $con->prepare("INSERT INTO user SET 
+             $query = $con->prepare("INSERT INTO users SET 
              username = ? ,
              email = ? ,
              password =? ;");

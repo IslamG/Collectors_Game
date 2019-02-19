@@ -20,7 +20,7 @@ ob_start();
         }
 
         global $con;
-        $query = $con->prepare("SELECT * from user WHERE username = ? AND password = ?;");
+        $query = $con->prepare("SELECT * from users WHERE username = ? AND password = ?;");
         $query->execute(
             array( $username, $password)
         );
