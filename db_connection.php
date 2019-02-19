@@ -2,10 +2,10 @@
     session_start();
 ?>
 <?php
- $servername = "mysql:host=localhost;dbname=collectors";
+ $servername = "mysql:host=localhost;dbname=collectors_db";
  $username = "root";
  $password = "";
- $db = "collectors";
+ $db = "collectors_db";
  $option = array( PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8");
 
 try {
