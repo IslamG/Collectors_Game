@@ -65,7 +65,7 @@ header {
 	height: 100%;
 }
 #headpos{
-	margin-top:100px;
+	margin-top:0px;
 }
  #headerpar {
 	color: #222;
@@ -242,14 +242,17 @@ a:focus, .btn:focus, .btn:active:focus, .btn.active:focus, .btn.focus, .btn:acti
 #scroll-up{
 	width: 50px;
 	height: 50px;
-	padding-top: 10px;
+	padding-top: 20px;
 	text-align: center;
 	position: fixed;
 	right: 30px;
 	bottom: 30px;
 	z-index: 9999;
 	cursor: pointer;
-	display: none
+	display: none;
+	}
+	#sc{
+		border-radius: 50%;
 	}
 /* Footer */
 #footer {
